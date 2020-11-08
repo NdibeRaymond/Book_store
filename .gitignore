@@ -1,1 +1,5 @@
 book_store_env/
+uploads/
+migrations/
+__pycache__/
+*.pyc
