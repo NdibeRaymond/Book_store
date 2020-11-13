@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xnm#qq%tbl3g3tpo6sd12x)wsyn-tnug%g=tz)x8^!m%_k*5c&'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = []
 
@@ -105,10 +105,10 @@ WSGI_APPLICATION = 'bookstore.wsgi.application'
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.postgresql',
-'NAME': 'postgres',
-'USER': 'postgres',
-'PASSWORD': 'postgres',
-'HOST': 'db',
+'NAME': os.environ.get("POSTGRES_NAME"),
+'USER': os.environ.get("POSTGRES_USER"),
+'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
+'HOST': os.environ.get("POSTGRES_HOST"),
 'PORT': 5432
     }
 }
