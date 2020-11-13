@@ -1,6 +1,6 @@
-book_store_env/
+.git/
 uploads/
 migrations/
 __pycache__/
-*.pyc
-staticfiles/
+book_store_env/
+.gitignore

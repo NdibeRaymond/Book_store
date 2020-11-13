@@ -14,9 +14,13 @@ WORKDIR /book_store_dir
 
 COPY requirements.txt /book_store_dir/
 
-RUN pip install -r /book_store_dir/requirements.txt
+RUN pip install --upgrade pip wheel && pip install -r /book_store_dir/requirements.txt
 
 # copy project
 
-COPY Dockerfile /book_store_dir/
-COPY Book_store /book_store_dir/
+COPY . /book_store_dir/
+
+
+
+
+# --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org
