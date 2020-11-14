@@ -26,6 +26,25 @@ services:
             - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
         volumes:
             - postgres_data:/var/lib/postgresql/data/
+ 
+    # adminer:
+    #     image: adminer
+    #     depends_on:
+    #         - db
+    #     restart: always
+    #     ports:
+    #         - 8080:8080
+
+    # pgadmin:
+    #     image: dpage/pgadmin4
+    #     depends_on:
+    #         - db
+    #     ports:
+    #         - 7070:80
+    #     environment:
+    #         PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+    #         PGADMIN_DEFAULT_PASSWORD: admin
+    #     restart: unless-stopped
 
 volumes:
     postgres_data:
