@@ -1,0 +1,6 @@
+<div>
+    <h3>Reviews</h3>
+    {% for review in book.reviews.all %}
+    <li>{{review.author}}: {{review.review}}</li>
+    {% endfor %}
+</div>
