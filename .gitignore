@@ -1,5 +1,6 @@
 book_store_env/
 uploads/
+media/
 migrations/
 __pycache__/
 *.pyc
